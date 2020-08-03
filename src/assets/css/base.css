@@ -3,9 +3,9 @@
 /*:root -> 获取根元素html*/
 :root {
   --font-size: 14px;
-  --font-color:rgb(202,202,202);
-  --app-theme:rgb(24,24,24);
-  --color-theme:rgb(205,73,81);
+  --font-color:black;
+  --app-theme:rgb(44,62,80);
+  --color-theme:rgb(95,184,120);
 }
 
 *,
