@@ -15,11 +15,11 @@
 						<i class="el-icon-date"></i>
 						<span slot="title">消息管理</span>
 					</el-menu-item>
-                    <el-menu-item index="/admin/">
+                    <el-menu-item index="/admin/bugs">
 						<i class="el-icon-cpu"></i>
 						<span slot="title">Bug管理</span>
 					</el-menu-item>
-					<el-menu-item index="/admin/">
+					<el-menu-item index="/admin/adminArticle">
 						<i class="el-icon-tickets"></i>
 						<span slot="title">文章管理</span>
 					</el-menu-item>

@@ -87,7 +87,7 @@
 									></el-input>
 								</el-form-item>
 								<el-form-item>
-									<el-button type="primary" @click="onSubmit"
+									<el-button type="primary" 
 										>保存</el-button
 									>
 									<el-button>取消</el-button>

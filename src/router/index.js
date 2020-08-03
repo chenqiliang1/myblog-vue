@@ -12,6 +12,8 @@ const Admin = () => import('../views/admin/admin')
 const AdminIndex = () => import('../views/admin/childComp/AdminIndex.vue')
 const AdminInfo = () => import('../views/admin/childComp/AdminInfo.vue')
 const AdminNews = () => import('../views/admin/childComp/AdminNews.vue')
+const Bugs = () => import('../views/admin/childComp/Bugs.vue')
+const AdminArticle = () => import('../views/admin/childComp/AdminArticle.vue')
 
 
 Vue.use(VueRouter)
@@ -81,6 +83,26 @@ const routes = [
                 },
 				components: {
 					admin_icon: AdminNews,
+				},
+            },
+            {
+				path: '/admin/adminArticle',
+                name: 'AdminArticle',
+                meta: {
+                    title: 'CQL-文章管理',
+                },
+				components: {
+					admin_icon: AdminArticle,
+				},
+            },
+            {
+				path: '/admin/bugs',
+                name: 'bugs',
+                meta: {
+                    title: 'CQL-Bug管理',
+                },
+				components: {
+					admin_icon: Bugs,
 				},
 			},
 		],
