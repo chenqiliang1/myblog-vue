@@ -23,7 +23,7 @@
 						<i class="el-icon-tickets"></i>
 						<span slot="title">文章管理</span>
 					</el-menu-item>
-					<el-menu-item index="/admin/">
+					<el-menu-item index="/admin/other">
 						<i class="el-icon-setting"></i>
 						<span slot="title">其他设置</span>
 					</el-menu-item>

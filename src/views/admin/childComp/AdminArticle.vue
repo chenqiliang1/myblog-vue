@@ -38,7 +38,9 @@
 						<el-button class="btn" type="success">搜索</el-button>
 
 						<el-button class="btn" type="success"
-							>新建文章</el-button
+							>
+                            <router-link to="/admin/make">新建文章</router-link>
+                            </el-button
 						>
 					</div>
 

@@ -85,6 +85,9 @@ export default {
 </script>
 
 <style scoped lang="less">
+a{
+    color: var(--color-text);
+}
 .article-item {
     // margin-bottom: 20px;
 

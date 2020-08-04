@@ -4,7 +4,12 @@
 		<keep-alive>
 			<router-view class="main" />
 		</keep-alive>
+        <keep-alive>
             <router-view class="Admin" name="Admin"/>
+        </keep-alive>
+        <!-- <keep-alive> -->
+            <!-- <router-view  name="make"/> -->
+        <!-- </keep-alive> -->
 		<main-bottom class="bottom"/>
         <back-top/>
 	</div>
@@ -24,6 +29,7 @@ export default {
 </script>
 <style lang="less">
 @import 'assets/css/base.css';
+@import 'assets/css/tocbot.css';
 html,
 body {
 	background-color: rgb(236, 236, 236);

@@ -14,6 +14,8 @@ const AdminInfo = () => import('../views/admin/childComp/AdminInfo.vue')
 const AdminNews = () => import('../views/admin/childComp/AdminNews.vue')
 const Bugs = () => import('../views/admin/childComp/Bugs.vue')
 const AdminArticle = () => import('../views/admin/childComp/AdminArticle.vue')
+const Make = () => import('../views/admin/childComp/Make.vue')
+
 
 
 Vue.use(VueRouter)
@@ -95,6 +97,16 @@ const routes = [
 					admin_icon: AdminArticle,
 				},
             },
+            // {
+			// 	path: '/admin/other',
+            //     name: 'other',
+            //     meta: {
+            //         title: 'CQL-其他设置',
+            //     },
+			// 	components: {
+			// 		admin_icon: Other,
+			// 	},
+            // },
             {
 				path: '/admin/bugs',
                 name: 'bugs',
@@ -109,14 +121,22 @@ const routes = [
 		meta: {
 			title: 'CQL-BLOG-后台管理',
 		},
-	},
+    },
+    {
+        path: '/admin/make',
+        name: 'Make',
+        meta: {
+            title: 'CQL-编辑文章',
+        },
+        component: Make
+    },
 	{
 		path: '/mine',
 		component: Mine,
 		meta: {
 			title: 'CQL-BLOG-给我留言',
 		},
-	},
+    },
 	{
 		path: '/resources',
 		component: Resources,
