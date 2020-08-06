@@ -54,6 +54,7 @@ export default {
     margin-bottom: 10px;
 }
 .category {
-	margin: 20px 0;
+    margin: 20px 0;
+    
 }
 </style>

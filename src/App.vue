@@ -7,9 +7,6 @@
         <keep-alive>
             <router-view class="Admin" name="Admin"/>
         </keep-alive>
-        <!-- <keep-alive> -->
-            <!-- <router-view  name="make"/> -->
-        <!-- </keep-alive> -->
 		<main-bottom class="bottom"/>
         <back-top/>
 	</div>

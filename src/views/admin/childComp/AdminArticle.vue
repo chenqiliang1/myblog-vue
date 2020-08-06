@@ -17,19 +17,19 @@
 						<el-input
 							placeholder="模糊搜索"
 							prefix-icon="el-icon-search"
-							v-model="input2"
+							v-model="input"
 							class="search"
 						>
 						</el-input>
 						<el-date-picker
-							v-model="value1"
+							v-model="value"
 							type="date"
 							placeholder="选择起始日期"
 						>
 						</el-date-picker>
 
 						<el-date-picker
-							v-model="value1"
+							v-model="value"
 							type="date"
 							placeholder="选择结束日期"
 						>
@@ -37,11 +37,11 @@
 
 						<el-button class="btn" type="success">搜索</el-button>
 
-						<el-button class="btn" type="success"
+						<el-button class="btn" type="success">
+							<router-link style="color:white" to="/admin/make"
+								>新建文章</router-link
 							>
-                            <router-link to="/admin/make">新建文章</router-link>
-                            </el-button
-						>
+						</el-button>
 					</div>
 
 					<el-table
@@ -168,8 +168,8 @@
 								</el-switch>
 							</template>
 						</el-table-column>
-                        <el-table-column label="心情" width="150">
-							<div >
+						<el-table-column label="心情" width="150">
+							<div>
 								快乐
 							</div>
 						</el-table-column>
@@ -202,64 +202,10 @@ export default {
 	data() {
 		return {
 			activeName: 'first',
-			options: [
-				{
-					value: '选项1',
-					label: '全部',
-				},
-				{
-					value: '选项2',
-					label: 'Java',
-				},
-				{
-					value: '选项3',
-					label: 'HTML',
-				},
-				{
-					value: '选项4',
-					label: 'VUE',
-				},
-				{
-					value: '选项5',
-					label: 'Python',
-				},
-			],
+			options: [],
 			value: '选项1',
 			input: '',
-			tableData: [
-				{
-					date: '2016-05-02',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1518 弄',
-					zip: 200333,
-				},
-				{
-					date: '2016-05-04',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1517 弄',
-					zip: 200333,
-				},
-				{
-					date: '2016-05-01',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1519 弄',
-					zip: 200333,
-				},
-				{
-					date: '2016-05-03',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1516 弄',
-					zip: 200333,
-				},
-			],
+			tableData: [],
 		}
 	},
 	methods: {},

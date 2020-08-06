@@ -143,93 +143,15 @@ export default {
 		return {
 			activeName: 'first',
 			options: [
-				{
-					value: '选项1',
-					label: '升序',
-				},
-				{
-					value: '选项2',
-					label: '降序',
-				},
+				
 			],
 			value: '选项1',
 			value1: true,
 			options2: [
-				{
-					value: '选项1',
-					label: '最近五天',
-				},
-				{
-					value: '选项2',
-					label: '昨天',
-				},
-				{
-					value: '选项3',
-					label: '前天',
-				},
-				{
-					value: '选项4',
-					label: '全部',
-					disabled: true,
-				},
+				
 			],
 			tableData: [
-				{
-					date: '2016-05-03',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1518 弄',
-					zip: 200333,
-				},
-				{
-					date: '2016-05-02',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1518 弄',
-					zip: 200333,
-				},
-				{
-					date: '2016-05-04',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1518 弄',
-					zip: 200333,
-				},
-				{
-					date: '2016-05-01',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1518 弄',
-					zip: 200333,
-				},
-				{
-					date: '2016-05-08',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1518 弄',
-					zip: 200333,
-				},
-				{
-					date: '2016-05-06',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1518 弄',
-					zip: 200333,
-				},
-				{
-					date: '2016-05-07',
-					name: '王小虎',
-					province: '上海',
-					city: '普陀区',
-					address: '上海市普陀区金沙江路 1518 弄',
-					zip: 200333,
-				},
+				
 			],
 		}
 	},

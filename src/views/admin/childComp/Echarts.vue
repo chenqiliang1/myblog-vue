@@ -12,7 +12,7 @@ export default {
 	},
 	methods: {
 		myEcharts() {
-			var myChart = this.$echarts.init(document.getElementById('main'))
+			let myChart = this.$echarts.init(document.getElementById('main'))
 
 			let option = {
 				title: {

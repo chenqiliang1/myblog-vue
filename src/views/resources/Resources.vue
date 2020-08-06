@@ -16,12 +16,15 @@
 					/>
 					<div class="content">
 						<el-link type="info" class="link">主 要 链 接</el-link>
-                        <div class="text">vue + Element 后台管理系统框架，可用于快速生成后台管理系统</div>
+						<div class="text">
+							vue + Element
+							后台管理系统框架，可用于快速生成后台管理系统
+						</div>
 					</div>
 				</el-card>
 			</el-col>
 
-            <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
+			<el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
 				<el-card
 					shadow="always"
 					:body-style="{ padding: '10px' }"
@@ -33,12 +36,15 @@
 					/>
 					<div class="content">
 						<el-link type="info" class="link">主 要 链 接</el-link>
-                        <div class="text">vue + Element 后台管理系统框架，可用于快速生成后台管理系统</div>
+						<div class="text">
+							vue + Element
+							后台管理系统框架，可用于快速生成后台管理系统
+						</div>
 					</div>
 				</el-card>
 			</el-col>
 
-            <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
+			<el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
 				<el-card
 					shadow="always"
 					:body-style="{ padding: '10px' }"
@@ -50,12 +56,15 @@
 					/>
 					<div class="content">
 						<el-link type="info" class="link">主 要 链 接</el-link>
-                        <div class="text">vue + Element 后台管理系统框架，可用于快速生成后台管理系统</div>
+						<div class="text">
+							vue + Element
+							后台管理系统框架，可用于快速生成后台管理系统
+						</div>
 					</div>
 				</el-card>
 			</el-col>
 
-            <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
+			<el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
 				<el-card
 					shadow="always"
 					:body-style="{ padding: '10px' }"
@@ -67,7 +76,10 @@
 					/>
 					<div class="content">
 						<el-link type="info" class="link">主 要 链 接</el-link>
-                        <div class="text">vue + Element 后台管理系统框架，可用于快速生成后台管理系统</div>
+						<div class="text">
+							vue + Element
+							后台管理系统框架，可用于快速生成后台管理系统
+						</div>
 					</div>
 				</el-card>
 			</el-col>
@@ -102,7 +114,7 @@ export default {
 	}
 
 	.card {
-        margin-bottom: 30px;
+		margin-bottom: 30px;
 		img {
 			display: block;
 			margin: 0 auto;
@@ -113,16 +125,16 @@ export default {
 			text-align: center;
 			.link {
 				// display: block;
-                // width: 100%;
-                font-weight: 500;
+				// width: 100%;
+				font-weight: 500;
 				font-size: 20px !important;
-            }
-            .text{
-                padding-top: 10px;
-                font-size: 14px;
-                line-height: 20px;
-                color: #606266;
-            }
+			}
+			.text {
+				padding-top: 10px;
+				font-size: 14px;
+				line-height: 20px;
+				color: #606266;
+			}
 		}
 	}
 }

@@ -97,16 +97,6 @@ const routes = [
 					admin_icon: AdminArticle,
 				},
             },
-            // {
-			// 	path: '/admin/other',
-            //     name: 'other',
-            //     meta: {
-            //         title: 'CQL-其他设置',
-            //     },
-			// 	components: {
-			// 		admin_icon: Other,
-			// 	},
-            // },
             {
 				path: '/admin/bugs',
                 name: 'bugs',

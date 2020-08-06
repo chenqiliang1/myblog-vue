@@ -49,7 +49,9 @@ export default {
     // margin-top: 20px;
   }
 }
+
 .article-main {
   width: 100%;
+  
 }
 </style>

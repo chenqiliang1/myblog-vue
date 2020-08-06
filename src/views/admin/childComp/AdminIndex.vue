@@ -1,6 +1,6 @@
 <template>
 	<div class="adminindex">
-		<h2 id="time"></h2>
+		<h2 id="time" ref="time"></h2>
 
 		<el-card class="box-card">
 			<span class="title">博客总体情况</span>
@@ -137,9 +137,11 @@ export default {
 	},
 	methods: {
 		TimeView() {
+            const that = this
 			let t = null
 			t = setTimeout(time, 1000) //開始运行
-			let dt
+            let dt
+            // console.log(that.$refs.time)
 			function time() {
 				clearTimeout(t) //清除定时器
 				dt = new Date()
@@ -149,7 +151,7 @@ export default {
 				var h = dt.getHours() //获取时
 				var m = dt.getMinutes() //获取分
 				var s = dt.getSeconds() //获取秒
-				document.querySelector('#time').innerHTML =
+				that.$refs.time.innerHTML =
 					y +
 					'年' +
 					mt +

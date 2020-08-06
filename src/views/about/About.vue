@@ -60,7 +60,8 @@ export default {
 	margin-bottom: 30px;
 }
 .text {
-	font-size: 14px;
+    font-size: 14px;
+    
 	h2 {
 		margin: 15px 0;
 		font-size: 16px;
