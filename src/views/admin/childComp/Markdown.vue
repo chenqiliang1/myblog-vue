@@ -73,26 +73,28 @@ export default {
 		let vm = this
 		//加载editormd
 		this.requireEditor(function() {
-			vm.editor = editormd('markdown', vm.defaultOptions)
-			vm.editor.config({
-				tocContainer: '#custom-toc-container',
-				tocDropdown: false,
-			})
+			try {
+				vm.editor = editormd('markdown', vm.defaultOptions)
+				vm.editor.config({
+					tocContainer: '#custom-toc-container',
+					tocDropdown: false,
+				})
+			} catch (error) {}
 		})
 	},
 	components: {},
 }
 </script>
 
-<style scoped lang="less">
-.markdown{
-    display: flex;
-		height: 500px;
-		overflow: hidden;
+<style lang="less">
+.markdown {
+	display: flex;
+	height: 500px;
+	overflow: hidden;
 
-		.id {
-			flex: 6;
-		}
+	.id {
+		flex: 6;
+	}
 }
 #custom-toc-container {
 	flex: 1;

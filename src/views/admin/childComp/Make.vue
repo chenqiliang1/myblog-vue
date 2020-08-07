@@ -13,10 +13,10 @@
 					<input type="file" id="file" />
 					<img src="" id="img" />
 					<h2 class="title">
-						标题
+						{{ title }}
 					</h2>
 				</div>
-				<el-input v-model="input" placeholder="请输入标题"></el-input>
+				<el-input v-model="title" placeholder="请输入标题"></el-input>
 			</el-card>
 		</div>
 
@@ -34,44 +34,37 @@
 								<el-col :span="24" style="margin-bottom:10px">
 									<el-select
 										class="select"
-										v-model="value"
-										placeholder="请选择"
+										v-model="type"
+										placeholder="请选择分类"
 									>
 										<el-option
-											v-for="item in options"
-											:key="item.value"
-											:label="item.label"
-											:value="item.value"
+											v-for="item in types"
+											:key="item.id"
+											:label="item.name"
+											:value="item.name"
 										>
 										</el-option>
 									</el-select>
-									<el-tag
-										:key="tag"
-										v-for="tag in dynamicTags"
-										closable
-										:disable-transitions="false"
-										@close="handleClose(tag)"
-									>
-										{{ tag }}
-									</el-tag>
 									<el-input
 										class="input-new-tag"
-										v-if="inputVisible"
-										v-model="inputValue"
-										ref="saveTagInput"
+										style="margin-right:20px"
+										v-if="isAddType"
+										v-model="type_value"
+										ref="addTage"
+										size="small"
 										@keyup.enter.native="handleInputConfirm"
-										@blur="handleInputConfirm"
 									>
 									</el-input>
 									<el-button
 										v-else
 										class="button-new-tag"
+										style="margin-right:20px"
 										size="small"
 										@click="showInput"
-										>+ New Tag</el-button
+										>添加分类</el-button
 									>
 									<el-switch
-										v-model="value1"
+										v-model="flag"
 										active-text="公开"
 										inactive-text="匿名"
 									>
@@ -86,7 +79,7 @@
 											type="textarea"
 											:rows="2"
 											placeholder="选填，摘要会在订阅号消息、转发链接等文章外的场景显露，帮助读者快速了解内容，如不填写则默认抓取正文前54字"
-											v-model="textarea"
+											v-model="description"
 										>
 										</el-input>
 									</el-col>
@@ -114,16 +107,16 @@
 							class="select"
 						>
 							<el-option
-								v-for="item in options"
-								:key="item.value"
-								:label="item.label"
-								:value="item.value"
+								v-for="(item, index) in feel"
+								:key="index"
+								:label="item"
+								:value="item"
 							>
 							</el-option>
 						</el-select>
 
 						<el-switch
-							v-model="value1"
+							v-model="flag"
 							active-text="匿名"
 							inactive-text="公开"
 						>
@@ -133,7 +126,7 @@
 						type="textarea"
 						:rows="2"
 						placeholder="请输入内容"
-						v-model="textarea"
+						v-model="content"
 					>
 					</el-input>
 					<el-col :span="24" class="btns">
@@ -148,43 +141,76 @@
 
 <script>
 import MarkDown from './Markdown'
+import types from '@/network/types'
 export default {
 	name: 'Make',
 	data() {
 		return {
-			dynamicTags: ['标签一', '标签二', '标签三'],
-			inputVisible: false,
-			inputValue: '',
+			// 分类
+			types: [],
+			type: '',
+			type_value: '',
+			type0bj: {},
+			// 标题
+			title: '',
+			// 是否匿名
+			flag: true,
+			// 描述
+			description: '',
+			feel: ['开心', '懵逼', '郁闷', '无奈', '害怕'],
+			// 说说内容
+			content: '',
+			// 是否添加类型
+			isAddType: false,
 			activeName: 'first',
-			value1: true,
 			imageUrl: '',
-			textarea: '',		
 		}
 	},
 	methods: {
-		handleClose(tag) {
-			this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1)
+		addType() {
+			let inputValue = this.type_value
+			if (inputValue) {
+				this.isAddType = false
+				this.type_value = ''
+				let id = this.types[this.types.length - 1].id
+				let type = {
+					name: inputValue,
+				}
+				types.addType(type)
+				type.id = id + 1
+				this.types.push(type)
+			}
 		},
 
 		showInput() {
-			this.inputVisible = true
-			this.$nextTick((_) => {
-				this.$refs.saveTagInput.$refs.input.focus()
+			this.isAddType = true
+			this.$nextTick(() => {
+				this.$refs.addTage.$refs.input.focus()
 			})
 		},
 
 		handleInputConfirm() {
-			let inputValue = this.inputValue
-			if (inputValue) {
-				this.dynamicTags.push(inputValue)
-			}
-			this.inputVisible = false
-			this.inputValue = ''
+			this.$confirm('是否添加新类型', '提示', {
+				confirmButtonText: '确定',
+				cancelButtonText: '取消',
+				type: 'warning',
+			})
+				.then(() => {
+					this.addTage()
+				})
+				.catch(() => {
+					this.$message({
+						type: 'info',
+						message: '已取消删除',
+					})
+				})
 		},
-		
 	},
 	mounted() {
-		
+		types.getAllType().then((res) => {
+			// 获取所有分类
+			this.types = res.data.types
+		})
 	},
 	components: {
 		MarkDown,

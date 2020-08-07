@@ -15,7 +15,7 @@ const AdminNews = () => import('../views/admin/childComp/AdminNews.vue')
 const Bugs = () => import('../views/admin/childComp/Bugs.vue')
 const AdminArticle = () => import('../views/admin/childComp/AdminArticle.vue')
 const Make = () => import('../views/admin/childComp/Make.vue')
-
+const Error = () => import('../views/error/error.vue')
 
 
 Vue.use(VueRouter)
@@ -26,6 +26,13 @@ const routes = [
 		redirect: '/home',
 		meta: {
 			title: 'CQL-BLOG-网站首页',
+		},
+    },
+    {
+		path: '/error',
+		component: Error,
+		meta: {
+			title: 'CQL-BLOG-错误页面',
 		},
 	},
 	{
